@@ -4,9 +4,9 @@ import {
   Route,
   Link,
 } from 'react-router-dom';
-import Header from './components/header';
-import Content from './components/content';
-import DocumentStatusListPage from './pages/document-status/containers/List.jsx';
+import Header from 'components/header';
+import Content from 'components/content';
+import DocumentStatusListPage from 'pages/document-status/containers/List.jsx';
 
 const EntryApp = () => (
   <Router>

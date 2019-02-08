@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { colors } from '../../utils/ui';
+import { colors } from 'utils/ui';
 
 export const StyledRoot = styled.ul`
   list-style-type: none;

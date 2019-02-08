@@ -1,6 +1,6 @@
 import React from 'react';
-import ContentBox from '../../../components/content-box';
-import List from '../../../components/list';
+import ContentBox from 'components/content-box';
+import List from 'components/list';
 
 const mockedItems = [
   { id: 1, name: 'Andamento', description: 'Quando o contrato está em andamento' },
