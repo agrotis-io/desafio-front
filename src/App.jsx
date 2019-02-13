@@ -1,23 +1,26 @@
 import React, { Fragment } from 'react';
+import { Provider } from 'react-redux';
 import { 
   BrowserRouter as Router,
   Route,
-  Link,
 } from 'react-router-dom';
 import Header from 'components/header';
 import Content from 'components/content';
-import DocumentStatusListPage from 'pages/document-status/containers/List.jsx';
+import DocumentStatusListPage from 'pages/document-status/containers/ListConnector';
+import appStateStore from 'store';
 
 const EntryApp = () => (
-  <Router>
-    <Fragment>
-      <Header />
+  <Provider store={appStateStore}>
+    <Router>
+      <Fragment>
+        <Header />
 
-      <Content>        
-        <Route exact path="/" component={DocumentStatusListPage} />
-      </Content>
-    </Fragment>
-  </Router>
+        <Content>        
+          <Route exact path="/" component={DocumentStatusListPage} />
+        </Content>
+      </Fragment>
+    </Router>
+  </Provider>
 );
 
 export default EntryApp;
