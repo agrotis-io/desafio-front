@@ -1,5 +1,7 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 import ContentBox from 'components/content-box';
+import FloatingActionButton from 'components/button/floating-action';
+import { atRightBottom } from 'components/button/floating-action/styled';
 import List from 'components/list';
 
 class DocumentStatusListContainer extends Component {
@@ -22,10 +24,19 @@ class DocumentStatusListContainer extends Component {
   }
 
   render() {
+    const FabAtRightBottom = atRightBottom(
+      FloatingActionButton,
+      '20px',
+      '20px',
+    );
+
     return (
-      <ContentBox title="Situações do documento">
-        { this.chooseContentComponent() }
-      </ContentBox>
+      <Fragment>
+        <ContentBox title="Situações do documento">
+          { this.chooseContentComponent() }
+        </ContentBox>
+        <FabAtRightBottom icon="plus" />
+      </Fragment>
     );
   }
 }
