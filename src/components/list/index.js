@@ -1,10 +1,13 @@
 import React, { Component } from 'react';
-import { 
-  StyledRoot, 
+import {
+  StyledRoot,
+  StyledList,
   StyledItem,
   StyledColumn,
   StyledLabel,
-  StyledValue, 
+  StyledValue,
+  StyledPagination,
+  StyledLoadMore,
 } from './styled';
 
 export default class List extends Component {
@@ -24,10 +27,30 @@ export default class List extends Component {
   }
 
   render() {
-    const { items } = this.props;
+    const {
+      hasPagination,
+      items,
+      loadMoreLabel,
+      totalItems,
+      onLoadMoreClick,
+    } = this.props;
+
     return (
       <StyledRoot>
-        { items.map(this.renderItem) }
+        <StyledList>
+          { items.map(this.renderItem) }
+        </StyledList>
+
+        <StyledPagination>
+          { hasPagination &&
+            <StyledLoadMore onClick={onLoadMoreClick}>
+              { loadMoreLabel }
+            </StyledLoadMore>
+          }
+          <span>
+            { `(${items.length} - ${totalItems})` }
+          </span>
+        </StyledPagination>
       </StyledRoot>
     );
   }

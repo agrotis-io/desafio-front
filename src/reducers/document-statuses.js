@@ -1,11 +1,22 @@
+import { concat } from 'ramda';
 import { TYPES as ACTION_TYPES } from 'actions/document-status';
+import { createReducer } from 'utils/helpers';
 
-const reducer = (previousState = [], action) => {
-  if (action.type === ACTION_TYPES.fetchAll) {
-    return [...action.payload];
-  }
-
-  return previousState;
+const initialState = {
+  totalRecords: 0,
+  records: [],
 };
 
-export default reducer;
+const handleFetchAll = (
+  previousState,
+  { payload: { records, totalRecords } }
+) => ({
+  totalRecords,
+  records: concat(previousState.records, records),
+});
+
+const handlers = {
+  [ACTION_TYPES.fetchAll]: handleFetchAll,
+};
+
+export default createReducer(initialState, handlers);
