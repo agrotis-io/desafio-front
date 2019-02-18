@@ -8,18 +8,58 @@ class DocumentStatusListContainer extends Component {
   constructor(props) {
     super(props);
     this.chooseContentComponent = this.chooseContentComponent.bind(this);
+    this.fetchDocumentStatuses = this.fetchDocumentStatuses.bind(this);
+    this.handleLoadMoreClick = this.handleLoadMoreClick.bind(this);
+
+    this.state = {
+      page: 1,
+    };
   }
-  
+
   componentDidMount() {
-    this.props.fetchDocumentStatuses();
+    this.fetchDocumentStatuses(this.state.page);
   }
 
   chooseContentComponent() {
     const { documentStatuses } = this.props;
     return (
       documentStatuses.length
-        ? <List items={documentStatuses} />
-        : <span>Sem itens cadastrados</span>
+        ? this.renderList()
+        : this.renderEmptyListMessage()
+    );
+  }
+
+  fetchDocumentStatuses(page) {
+    this.props.fetchDocumentStatuses({
+      itemsPerPage: 3,
+      page,
+    });
+  }
+
+  handleLoadMoreClick() {
+    const nextPage = (this.state.page + 1);
+    this.fetchDocumentStatuses(nextPage);
+    this.setState({
+      page: nextPage,
+    });
+  }
+
+  renderEmptyListMessage() {
+    return (
+      <span>Sem itens cadastrados</span>
+    );
+  }
+
+  renderList() {
+    const { documentStatuses, totalStatuses } = this.props;
+    return (
+      <List
+        hasPagination={documentStatuses.length < totalStatuses}
+        items={documentStatuses}
+        loadMoreLabel="Carregar mais..."
+        totalItems={totalStatuses}
+        onLoadMoreClick={this.handleLoadMoreClick}
+      />
     );
   }
 

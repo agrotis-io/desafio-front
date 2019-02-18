@@ -4,7 +4,10 @@ export const TYPES = {
   fetchAll: 'FETCH_ALL_DOCUMENT_STATUS',
 }
 
-export const fetchAll = () => ({
+export const fetchAll = ({ itemsPerPage, page }) => ({
     type: TYPES.fetchAll,
-    payload: get('documentStatuses'),
+    payload: get('documentStatuses', {
+      itemsPerPage,
+      page,
+    }),
 });
