@@ -4,10 +4,10 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 module.exports = {
   module: {
     rules: [
-      { 
+      {
         test: /\.(js|jsx)$/,
         exclude: /node_modules/,
-        use: { loader: 'babel-loader' }, 
+        use: { loader: 'babel-loader' },
       },
       {
         test: /\.html$/,
@@ -20,9 +20,9 @@ module.exports = {
     ]
   },
   plugins: [
-    new HtmlWebpackPlugin({ 
-      template: './src/index.html', 
-      filename: './index.html', 
+    new HtmlWebpackPlugin({
+      template: './src/index.html',
+      filename: './index.html',
     }),
   ],
   resolve: {
@@ -33,6 +33,7 @@ module.exports = {
       reducers: path.resolve(__dirname, '../src/reducers'),
       actions: path.resolve(__dirname, '../src/actions'),
       store: path.resolve(__dirname, '../src/store'),
+      api: path.resolve(__dirname, '../src/api'),
     },
   },
 };

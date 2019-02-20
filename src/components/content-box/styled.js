@@ -6,12 +6,21 @@ export const StyledRoot = styled.article`
   border: 1px solid ${colors.grey};
 `;
 
-export const StyledTitle = styled.header`
+export const StyledHeader = styled.header`
+  align-items: center;
   background-color: ${colors.primary.normal};
   color: white;
+  display: flex;
   font-size: 18px;
   font-weight: 500;
+  justify-content: space-between;
   padding: 16px;
+`;
+
+export const StyledTitle = styled.h3``;
+
+export const StyledActions = styled.div`
+  justify-self: flex-end;
 `;
 
 export const StyledContent = styled.div`

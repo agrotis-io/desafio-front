@@ -1,19 +1,50 @@
-import React from 'react';
+import React, { Component } from 'react';
 import {
   StyledRoot,
-  StyledTitle,
+  StyledHeader,
   StyledContent,
+  StyledActions,
+  StyledTitle,
 } from './styled';
 
-const ContentBox = ({ children, title }) => (
-  <StyledRoot>
-    <StyledTitle>
-      { title }
-    </StyledTitle>
-    <StyledContent>
-      { children }
-    </StyledContent>
-  </StyledRoot>
-);
+export default class ContentBox extends Component {
+  constructor(props) {
+    super(props);
+    this.renderTitle = this.renderTitle.bind(this);
+  }
 
-export default ContentBox;
+  renderTitle() {
+    return (
+      <StyledTitle>
+        { this.props.title }
+      </StyledTitle>
+    );
+  }
+
+  renderAction(action) {
+    return action;
+  }
+
+  renderActions() {
+    return (
+      <StyledActions>
+        { this.props.actions.map(this.renderAction) }
+      </StyledActions>
+    );
+  }
+
+  render() {
+    const { children } = this.props;
+    return (
+      <StyledRoot>
+        <StyledHeader>
+          { this.renderTitle() }
+          { this.renderActions() }
+        </StyledHeader>
+        <StyledContent>
+          { children }
+        </StyledContent>
+      </StyledRoot>
+    );
+  }
+};

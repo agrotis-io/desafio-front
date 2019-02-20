@@ -8,7 +8,7 @@ const FloatingActionButton = ({ icon, className, type, onClick }) => (
     type={type}
     onClick={onClick}
   >
-    <Icon icon={icon} />
+    <Icon icon={icon} bg="white" />
   </StyledRoot>
 )
 

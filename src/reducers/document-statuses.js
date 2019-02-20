@@ -7,16 +7,25 @@ const initialState = {
   records: [],
 };
 
-const handleFetchAll = (
+const handleSet = (
   previousState,
-  { payload: { records, totalRecords } }
+  { payload: { records, totalRecords } },
+) => ({
+  totalRecords,
+  records: [...records],
+});
+
+const handleAppend = (
+  previousState,
+  { payload: { records, totalRecords } },
 ) => ({
   totalRecords,
   records: concat(previousState.records, records),
 });
 
 const handlers = {
-  [ACTION_TYPES.fetchAll]: handleFetchAll,
+  [ACTION_TYPES.set]: handleSet,
+  [ACTION_TYPES.append]: handleAppend,
 };
 
 export default createReducer(initialState, handlers);
