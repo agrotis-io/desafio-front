@@ -1,8 +1,11 @@
 import React, { Component, Fragment } from 'react';
 import ContentBox from 'components/content-box';
+import Searchbar from 'components/content-box/searchbar';
 import FloatingActionButton from 'components/button/floating-action';
 import { atRightBottom } from 'components/button/floating-action/styled';
 import List from 'components/list';
+
+const ITEMS_PER_PAGE = 3;
 
 class DocumentStatusListContainer extends Component {
   constructor(props) {
@@ -10,14 +13,38 @@ class DocumentStatusListContainer extends Component {
     this.chooseContentComponent = this.chooseContentComponent.bind(this);
     this.fetchDocumentStatuses = this.fetchDocumentStatuses.bind(this);
     this.handleLoadMoreClick = this.handleLoadMoreClick.bind(this);
+    this.handleSearchSubmit = this.handleSearchSubmit.bind(this);
 
     this.state = {
       page: 1,
+      appliedFilter: null,
     };
   }
 
   componentDidMount() {
-    this.fetchDocumentStatuses(this.state.page);
+    this.fetchDocumentStatuses({
+      pagination: { page: this.state.page },
+    });
+  }
+
+  fetchDocumentStatuses({ filter, pagination }) {
+    this.props.fetchDocumentStatuses({
+      pagination: {
+        itemsPerPage: ITEMS_PER_PAGE,
+        ...pagination,
+      },
+      filter: { ...filter },
+    });
+  }
+
+  fetchMoreDocumentStatuses({ filter, pagination }) {
+    this.props.fetchMoreDocumentStatuses({
+      pagination: {
+        itemsPerPage: ITEMS_PER_PAGE,
+        ...pagination,
+      },
+      filter,
+    });
   }
 
   chooseContentComponent() {
@@ -29,19 +56,47 @@ class DocumentStatusListContainer extends Component {
     );
   }
 
-  fetchDocumentStatuses(page) {
-    this.props.fetchDocumentStatuses({
-      itemsPerPage: 3,
-      page,
-    });
-  }
-
   handleLoadMoreClick() {
-    const nextPage = (this.state.page + 1);
-    this.fetchDocumentStatuses(nextPage);
+    const { appliedFilter, page } = this.state;
+    const nextPage = (page + 1);
+
+    this.fetchMoreDocumentStatuses({
+      pagination: {
+        page: nextPage,
+      },
+      filter: appliedFilter,
+    });
+
     this.setState({
       page: nextPage,
     });
+  }
+
+  handleSearchSubmit(event, text) {
+    const page = 1;
+    const filter = { name: text };
+
+    this.fetchDocumentStatuses({
+      pagination: {
+        page,
+      },
+      filter,
+    });
+
+    this.setState({
+      page,
+      appliedFilter: filter,
+    });
+  }
+
+  renderSearchbar() {
+    return (
+      <Searchbar
+        key="searchbar"
+        placeholder="Pesquisar por nome..."
+        onSubmit={this.handleSearchSubmit}
+      />
+    );
   }
 
   renderEmptyListMessage() {
@@ -72,7 +127,10 @@ class DocumentStatusListContainer extends Component {
 
     return (
       <Fragment>
-        <ContentBox title="Situações do documento">
+        <ContentBox
+          actions={[ this.renderSearchbar() ]}
+          title="Situações do documento"
+        >
           { this.chooseContentComponent() }
         </ContentBox>
         <FabAtRightBottom icon="plus" />

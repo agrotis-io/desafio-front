@@ -1,13 +1,22 @@
-import { get } from 'utils/http';
+import { get } from 'api';
 
 export const TYPES = {
-  fetchAll: 'FETCH_ALL_DOCUMENT_STATUS',
+  set: 'SET_DOCUMENT_STATUSES',
+  append: 'APPEND_DOCUMENT_STATUSES',
 }
 
-export const fetchAll = ({ itemsPerPage, page }) => ({
-    type: TYPES.fetchAll,
-    payload: get('documentStatuses', {
-      itemsPerPage,
-      page,
-    }),
+export const fetchAll = ({ filter, pagination }) => ({
+  type: TYPES.set,
+  payload: get('documentStatuses', {
+    filter,
+    pagination,
+  }),
+});
+
+export const fetchMore = ({ filter, pagination }) => ({
+  type: TYPES.append,
+  payload: get('documentStatuses', {
+    pagination,
+    filter,
+  }),
 });
