@@ -1,6 +1,8 @@
 import React, { PureComponent } from 'react';
+import pt from 'prop-types';
 import { isEventKey } from 'keycode';
 
+import { noop } from 'utils/helpers';
 import { colors } from 'utils/ui';
 import { StyledRoot, StyledIcon, StyledInput } from './styled';
 
@@ -27,4 +29,13 @@ export default class Searchbar extends PureComponent {
       </StyledRoot>
     );
   }
+};
+
+Searchbar.defaultProps = {
+  onSubmit: noop,
+};
+
+Searchbar.propTypes = {
+  placeholder: pt.string,
+  onSubmit: pt.func,
 };

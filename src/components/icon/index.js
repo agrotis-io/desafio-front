@@ -1,4 +1,6 @@
 import React from 'react';
+import pt from 'prop-types';
+
 import { ICONS } from './icons';
 
 const Icon = ({ className, icon, height, bg, width }) => (
@@ -18,6 +20,11 @@ Icon.defaultProps = {
   height: 24,
   bg: '#000',
   width: 24,
+};
+
+Icon.propTypes = {
+  className: pt.string,
+  icon: pt.oneOf(Object.keys(ICONS)),
 };
 
 export default Icon;

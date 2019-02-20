@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import pt from 'prop-types';
+
 import {
   StyledRoot,
   StyledHeader,
@@ -47,4 +49,10 @@ export default class ContentBox extends Component {
       </StyledRoot>
     );
   }
+};
+
+ContentBox.propTypes = {
+  actions: pt.arrayOf(pt.node),
+  children: pt.node,
+  title: pt.string,
 };
