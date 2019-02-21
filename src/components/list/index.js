@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import pt from 'prop-types';
+
 import {
   StyledRoot,
   StyledList,
@@ -54,4 +56,17 @@ export default class List extends Component {
       </StyledRoot>
     );
   }
+};
+
+List.defaultProps = {
+  hasPagination: false,
+  loadMoreLabel: 'Carregar mais...',
+};
+
+List.propTypes = {
+  hasPagination: pt.bool,
+  items: pt.array.isRequired,
+  loadMoreLabel: pt.string,
+  totalItems: pt.number,
+  onLoadMoreClick: pt.func,
 };

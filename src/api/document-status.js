@@ -22,9 +22,9 @@ const mockedData = [
 ];
 
 /**
- * Builds a object structure for paginated responses.
- * @param {*} totalRecords
- * @param {*} records
+ * Builds an object structure for paginated responses.
+ * @param {number} totalRecords
+ * @param {array} records
  */
 const buildResponse = (totalRecords, records) => ({
   totalRecords,
