@@ -3,8 +3,8 @@ import { bindActionCreators } from 'redux';
 import {
   fetchAll as fetchDocumentStatuses,
   fetchMore as fetchMoreDocumentStatuses,
-} from 'actions/document-status';
-import List from './List.jsx';
+} from '@app/actions/document-status';
+import List from './DocumentStatusList';
 
 const mapStateToProps = (state) => ({
   totalStatuses: state.documentStatuses.totalRecords,

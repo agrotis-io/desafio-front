@@ -1,13 +1,13 @@
 import React, { Fragment } from 'react';
 import { Provider } from 'react-redux';
-import { 
+import {
   BrowserRouter as Router,
   Route,
 } from 'react-router-dom';
-import Header from 'components/header';
-import Content from 'components/content';
-import DocumentStatusListPage from 'pages/document-status/containers/ListConnector';
-import appStateStore from 'store';
+import Header from '@app/components/header';
+import Content from '@app/components/content';
+import DocumentStatusListPage from '@app/pages/document-status/containers/DocumentStatusListConnector';
+import appStateStore from '@app/store';
 
 const EntryApp = () => (
   <Provider store={appStateStore}>
@@ -15,7 +15,7 @@ const EntryApp = () => (
       <Fragment>
         <Header />
 
-        <Content>        
+        <Content>
           <Route exact path="/" component={DocumentStatusListPage} />
         </Content>
       </Fragment>

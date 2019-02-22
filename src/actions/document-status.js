@@ -1,4 +1,4 @@
-import { get } from 'api';
+import { get } from '@app/api';
 
 export const TYPES = {
   set: 'SET_DOCUMENT_STATUSES',

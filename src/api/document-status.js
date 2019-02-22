@@ -7,7 +7,7 @@ import {
   splitEvery,
   where,
 } from 'ramda';
-import { isEmptyOrFalsy } from 'utils/helpers';
+import { isEmptyOrFalsy } from '@app/utils/helpers';
 
 /**
  * Simulates the data stored in a database.

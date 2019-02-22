@@ -1,6 +1,6 @@
 import { concat } from 'ramda';
-import { TYPES as ACTION_TYPES } from 'actions/document-status';
-import { createReducer } from 'utils/helpers';
+import { TYPES as ACTION_TYPES } from '@app/actions/document-status';
+import { createReducer } from '@app/utils/helpers';
 
 const initialState = {
   totalRecords: 0,

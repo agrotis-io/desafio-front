@@ -12,7 +12,19 @@ import {
 export default class ContentBox extends Component {
   constructor(props) {
     super(props);
+    this.hasActions = this.hasActions.bind(this);
     this.renderTitle = this.renderTitle.bind(this);
+    this.renderActions = this.renderActions.bind(this);
+  }
+
+  hasActions() {
+    const { actions } = this.props;
+    return (actions && actions.length > 0);
+  }
+
+  hasTitle() {
+    const { title } = this.props;
+    return (title && title.length > 0);
   }
 
   renderTitle() {
@@ -40,8 +52,8 @@ export default class ContentBox extends Component {
     return (
       <StyledRoot>
         <StyledHeader>
-          { this.renderTitle() }
-          { this.renderActions() }
+          { this.hasTitle() && this.renderTitle() }
+          { this.hasActions() && this.renderActions() }
         </StyledHeader>
         <StyledContent>
           { children }
