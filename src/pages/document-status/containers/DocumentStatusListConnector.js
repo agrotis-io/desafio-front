@@ -4,7 +4,7 @@ import {
   fetchAll as fetchDocumentStatuses,
   fetchMore as fetchMoreDocumentStatuses,
 } from '@app/actions/document-status';
-import List from './List.jsx';
+import List from './DocumentStatusList';
 
 const mapStateToProps = (state) => ({
   totalStatuses: state.documentStatuses.totalRecords,

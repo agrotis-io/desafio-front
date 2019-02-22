@@ -6,7 +6,7 @@ import {
 } from 'react-router-dom';
 import Header from '@app/components/header';
 import Content from '@app/components/content';
-import DocumentStatusListPage from '@app/pages/document-status/containers/ListConnector';
+import DocumentStatusListPage from '@app/pages/document-status/containers/DocumentStatusListConnector';
 import appStateStore from '@app/store';
 
 const EntryApp = () => (

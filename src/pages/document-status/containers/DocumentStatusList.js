@@ -1,9 +1,11 @@
 import React, { Component, Fragment } from 'react';
+
 import ContentBox from '@app/components/content-box';
 import Searchbar from '@app/components/content-box/searchbar';
 import FloatingActionButton from '@app/components/button/floating-action';
 import { atRightBottom } from '@app/components/button/floating-action/styled';
 import List from '@app/components/list';
+import { noop } from '@app/utils/helpers';
 
 const ITEMS_PER_PAGE = 3;
 
@@ -138,5 +140,10 @@ class DocumentStatusListContainer extends Component {
     );
   }
 }
+
+DocumentStatusListContainer.defaultProps = {
+  documentStatuses: [],
+  fetchDocumentStatuses: noop,
+};
 
 export default DocumentStatusListContainer;
