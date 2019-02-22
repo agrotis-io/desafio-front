@@ -19,5 +19,5 @@ export const get = (route, options) => {
   if (!requestHandlers[route])
     throw new Error(`Route ${route} not registered`);
 
-  return logMiddleware(requestHandlers[route])(route, options);
+  return requestHandlers[route](route, options);
 };
