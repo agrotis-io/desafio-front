@@ -2,8 +2,8 @@ import React, { PureComponent } from 'react';
 import pt from 'prop-types';
 import { isEventKey } from 'keycode';
 
-import { noop } from 'utils/helpers';
-import { colors } from 'utils/ui';
+import { noop } from '@app/utils/helpers';
+import { colors } from '@app/utils/ui';
 import { StyledRoot, StyledIcon, StyledInput } from './styled';
 
 export default class Searchbar extends PureComponent {

@@ -27,13 +27,13 @@ module.exports = {
   ],
   resolve: {
     alias: {
-      components: path.resolve(__dirname, '../src/components/'),
-      pages: path.resolve(__dirname, '../src/pages/'),
-      utils: path.resolve(__dirname, '../src/utils/'),
-      reducers: path.resolve(__dirname, '../src/reducers'),
-      actions: path.resolve(__dirname, '../src/actions'),
-      store: path.resolve(__dirname, '../src/store'),
-      api: path.resolve(__dirname, '../src/api'),
+      '@app/components': path.resolve(__dirname, '../src/components/'),
+      '@app/pages': path.resolve(__dirname, '../src/pages/'),
+      '@app/utils': path.resolve(__dirname, '../src/utils/'),
+      '@app/reducers': path.resolve(__dirname, '../src/reducers'),
+      '@app/actions': path.resolve(__dirname, '../src/actions'),
+      '@app/store': path.resolve(__dirname, '../src/store'),
+      '@app/api': path.resolve(__dirname, '../src/api'),
     },
   },
 };

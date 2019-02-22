@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { colors } from 'utils/ui';
+import { colors } from '@app/utils/ui';
 
 export const StyledRoot = styled.div`
   display: flex;

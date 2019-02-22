@@ -1,7 +1,7 @@
 import React from 'react';
 import pt from 'prop-types';
 
-import Icon from 'components/icon';
+import Icon from '@app/components/icon';
 import { StyledRoot } from './styled';
 
 const FloatingActionButton = ({ icon, className, type, onClick }) => (

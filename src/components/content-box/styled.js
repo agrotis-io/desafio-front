@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { baseStyles, colors } from 'utils/ui';
+import { baseStyles, colors } from '@app/utils/ui';
 
 export const StyledRoot = styled.article`
   ${baseStyles};

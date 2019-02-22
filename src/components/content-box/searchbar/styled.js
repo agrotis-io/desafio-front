@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import Icon from 'components/icon';
+import Icon from '@app/components/icon';
 
 export const StyledRoot = styled.div`
   align-items: center;

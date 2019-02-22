@@ -1,9 +1,9 @@
 import React, { Component, Fragment } from 'react';
-import ContentBox from 'components/content-box';
-import Searchbar from 'components/content-box/searchbar';
-import FloatingActionButton from 'components/button/floating-action';
-import { atRightBottom } from 'components/button/floating-action/styled';
-import List from 'components/list';
+import ContentBox from '@app/components/content-box';
+import Searchbar from '@app/components/content-box/searchbar';
+import FloatingActionButton from '@app/components/button/floating-action';
+import { atRightBottom } from '@app/components/button/floating-action/styled';
+import List from '@app/components/list';
 
 const ITEMS_PER_PAGE = 3;
 
