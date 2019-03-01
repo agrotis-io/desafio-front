@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import pt from 'prop-types';
+import { noop } from '@app/utils/helpers';
 
 import {
   StyledRoot,
@@ -13,9 +14,21 @@ import {
 } from './styled';
 
 export default class List extends Component {
-  renderItem({ id, name, description }) {
+  constructor(props) {
+    super(props);
+    this.renderItem = this.renderItem.bind(this);
+  }
+
+  renderItem(item) {
+    const { id, name, description } = item;
+    const { onItemClick } = this.props;
+
     return (
-      <StyledItem key={id}>
+      <StyledItem
+        key={id}
+        isLinked={onItemClick !== noop}
+        onClick={(evt) => onItemClick(evt, item)}
+      >
         <StyledColumn width="35">
           <StyledLabel>Nome: </StyledLabel>
           <StyledValue>{ name }</StyledValue>
@@ -61,6 +74,8 @@ export default class List extends Component {
 List.defaultProps = {
   hasPagination: false,
   loadMoreLabel: 'Carregar mais...',
+  onItemClick: noop,
+  onLoadMoreClick: noop,
 };
 
 List.propTypes = {
@@ -68,5 +83,6 @@ List.propTypes = {
   items: pt.array.isRequired,
   loadMoreLabel: pt.string,
   totalItems: pt.number,
+  onItemClick: pt.func,
   onLoadMoreClick: pt.func,
 };

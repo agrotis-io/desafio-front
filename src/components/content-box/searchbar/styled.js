@@ -1,12 +1,13 @@
 import styled from 'styled-components';
-import Icon from '@app/components/icon';
+import MagnifierIcon from '@app/components/icon/magnifier';
 
 export const StyledRoot = styled.div`
   align-items: center;
   background: white;
   box-sizing: border-box;
   display: flex;
-  height: 39px;
+  height: 30px;
+  margin: -5px 0; /* negative so that it overrides title's padding */
   padding: 5px 10px;
 `;
 
@@ -17,6 +18,6 @@ export const StyledInput = styled.input.attrs({
   height: 100%;
 `;
 
-export const StyledIcon = styled(Icon)`
+export const StyledIcon = styled(MagnifierIcon)`
   margin-right: 7px;
 `;

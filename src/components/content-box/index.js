@@ -1,12 +1,18 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 import pt from 'prop-types';
+
+import LeftArrowIcon from '@app/components/icon/left-arrow';
+import { colors } from '@app/utils/ui';
+import { noop } from '@app/utils/helpers';
 
 import {
   StyledRoot,
   StyledHeader,
   StyledContent,
-  StyledActions,
   StyledTitle,
+  StyledBackButton,
+  StyledHeaderLeft,
+  StyledHeaderRight,
 } from './styled';
 
 export default class ContentBox extends Component {
@@ -35,25 +41,39 @@ export default class ContentBox extends Component {
     );
   }
 
+  renderBackAction() {
+    const { onBackActionClick } = this.props;
+    return (
+      <StyledBackButton onClick={onBackActionClick}>
+        <LeftArrowIcon fill={colors.white} height="16" />
+      </StyledBackButton>
+    );
+  }
+
   renderAction(action) {
     return action;
   }
 
   renderActions() {
     return (
-      <StyledActions>
+      <Fragment>
         { this.props.actions.map(this.renderAction) }
-      </StyledActions>
+      </Fragment>
     );
   }
 
   render() {
-    const { children } = this.props;
+    const { children, hasBackAction } = this.props;
     return (
       <StyledRoot>
         <StyledHeader>
-          { this.hasTitle() && this.renderTitle() }
-          { this.hasActions() && this.renderActions() }
+          <StyledHeaderLeft>
+            { hasBackAction && this.renderBackAction() }
+            { this.hasTitle() && this.renderTitle() }
+          </StyledHeaderLeft>
+          <StyledHeaderRight>
+            { this.hasActions() && this.renderActions() }
+          </StyledHeaderRight>
         </StyledHeader>
         <StyledContent>
           { children }
@@ -63,8 +83,15 @@ export default class ContentBox extends Component {
   }
 };
 
+ContentBox.defaultProps = {
+  hasBackAction: false,
+  onBackActionClick: noop,
+};
+
 ContentBox.propTypes = {
   actions: pt.arrayOf(pt.node),
   children: pt.node,
+  hasBackAction: pt.bool,
   title: pt.string,
+  onBackActionClick: pt.func,
 };

@@ -1,27 +1,28 @@
 import React from 'react';
 import pt from 'prop-types';
 
-import Icon from '@app/components/icon';
+import { noop } from '@app/utils/helpers';
 import { StyledRoot } from './styled';
 
-const FloatingActionButton = ({ icon, className, type, onClick }) => (
+const FloatingActionButton = ({ children, className, type, onClick }) => (
   <StyledRoot
     className={className}
     type={type}
     onClick={onClick}
   >
-    <Icon icon={icon} bg="white" />
+    { children }
   </StyledRoot>
 )
 
 FloatingActionButton.defaultProps = {
   type: 'button',
+  onClick: noop,
 };
 
 FloatingActionButton.propTypes = {
   className: pt.string,
-  icon: pt.string.isRequired,
   type: pt.string,
+  onClick: pt.func,
 };
 
 export default FloatingActionButton;

@@ -4,7 +4,9 @@ import ContentBox from '@app/components/content-box';
 import Searchbar from '@app/components/content-box/searchbar';
 import FloatingActionButton from '@app/components/button/floating-action';
 import { atRightBottom } from '@app/components/button/floating-action/styled';
+import PlusIcon from '@app/components/icon/plus';
 import List from '@app/components/list';
+import { colors } from '@app/utils/ui';
 import { noop } from '@app/utils/helpers';
 
 const ITEMS_PER_PAGE = 3;
@@ -16,6 +18,7 @@ class DocumentStatusListContainer extends Component {
     this.fetchDocumentStatuses = this.fetchDocumentStatuses.bind(this);
     this.handleLoadMoreClick = this.handleLoadMoreClick.bind(this);
     this.handleSearchSubmit = this.handleSearchSubmit.bind(this);
+    this.handleItemClick = this.handleItemClick.bind(this);
 
     this.state = {
       page: 1,
@@ -56,6 +59,12 @@ class DocumentStatusListContainer extends Component {
         ? this.renderList()
         : this.renderEmptyListMessage()
     );
+  }
+
+  handleItemClick(evt, item) {
+    const { history: routerHistory } = this.props;
+    const { id } = item;
+    routerHistory.push(`/edit/${id}`);
   }
 
   handleLoadMoreClick() {
@@ -115,18 +124,30 @@ class DocumentStatusListContainer extends Component {
         items={documentStatuses}
         loadMoreLabel="Carregar mais..."
         totalItems={totalStatuses}
+        onItemClick={this.handleItemClick}
         onLoadMoreClick={this.handleLoadMoreClick}
       />
     );
   }
 
-  render() {
-    const FabAtRightBottom = atRightBottom(
+  renderFAB() {
+    const Action = atRightBottom(
       FloatingActionButton,
       '20px',
       '20px',
     );
 
+    return (
+      <Action>
+        <PlusIcon
+          height="17"
+          fill={colors.white}
+        />
+      </Action>
+    );
+  }
+
+  render() {
     return (
       <Fragment>
         <ContentBox
@@ -135,7 +156,8 @@ class DocumentStatusListContainer extends Component {
         >
           { this.chooseContentComponent() }
         </ContentBox>
-        <FabAtRightBottom icon="plus" />
+
+        { this.renderFAB() }
       </Fragment>
     );
   }

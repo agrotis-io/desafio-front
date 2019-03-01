@@ -19,6 +19,10 @@ export const StyledItem = styled.li`
   &:not(:last-child) {
     margin-bottom: 8px;
   }
+
+  ${({ isLinked }) => isLinked && `
+    cursor: pointer;
+  `}
 `;
 
 export const StyledColumn = styled.div`
