@@ -17,7 +17,7 @@ describe('[Given] a DocumentStatusListContainer component', () => {
   describe('[When] data is present', () => {
     beforeEach(() => {
       wrapper.setProps({
-        documentStatuses: mockedDocumentStatuses,
+        documentStatuses: mockedDocumentStatuses.records,
       });
     });
 
@@ -25,7 +25,7 @@ describe('[Given] a DocumentStatusListContainer component', () => {
       expect(wrapper
         .find(List)
         .prop('items')
-      ).toBe(mockedDocumentStatuses);
+      ).toBe(mockedDocumentStatuses.records);
     });
   });
 });

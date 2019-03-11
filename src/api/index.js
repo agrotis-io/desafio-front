@@ -1,23 +1,11 @@
-/**
- * This is a mocked HTTP library. Instead of fetching
- * real data from the network, it just mocks data and
- * returns them in a sync way.
- */
-import logMiddleware from './log-middleware';
-import { getDocumentStatuses } from './document-status';
+const getDatabase = () => (
+  firebase.firestore()
+);
 
-/**
- * Performs a mocked HTTP GET request.
- * @param {*} route
- * @param {*} options
- */
-export const get = (route, options) => {
-  const requestHandlers = {
-    'documentStatuses': getDocumentStatuses,
-  };
+const get = (resourceName) => (
+  getDatabase().collection(resourceName).get()
+);
 
-  if (!requestHandlers[route])
-    throw new Error(`Route ${route} not registered`);
-
-  return requestHandlers[route](route, options);
+export default {
+  get,
 };
