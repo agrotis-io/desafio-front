@@ -4,9 +4,9 @@ export const StyledRoot = styled.header`
   align-items: center;
   border-bottom: 1px solid black;
   display: flex;
-  padding: 20px;
+  padding: 8px 24px;
 `;
 
 export const StyledLogo = styled.img`
-  height: 30px;
+  height: 50px;
 `;

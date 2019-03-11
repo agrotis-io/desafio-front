@@ -3,7 +3,7 @@ import { StyledRoot, StyledLogo } from './styled';
 
 const Header = () => (
   <StyledRoot>
-    <StyledLogo src="https://agrotis.io/static/media/logo.3db607bd.svg" />
+    <StyledLogo src="https://suporte.agrotis.com/static//websites/images/agrotis-logo-loading.svg" />
   </StyledRoot>
 )
 
