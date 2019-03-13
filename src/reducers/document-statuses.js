@@ -25,6 +25,7 @@ const handleAppend = (
 
 const handlers = {
   [ACTION_TYPES.append]: handleAppend,
+  [ACTION_TYPES.set]: handleSet,
 };
 
 export default createReducer(initialState, handlers);

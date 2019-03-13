@@ -3,7 +3,10 @@ const getDatabase = () => (
 );
 
 const get = (resourceName) => (
-  getDatabase().collection(resourceName).get()
+  getDatabase()
+    .collection(resourceName)
+    .orderBy('name')
+    .get()
 );
 
 export default {

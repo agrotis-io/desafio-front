@@ -79,9 +79,7 @@ class DocumentStatusListContainer extends Component {
     const filter = { name: text };
 
     this.fetchDocumentStatuses({
-      pagination: {
-        page,
-      },
+      pagination: { page },
       filter,
     });
 
