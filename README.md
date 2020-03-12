@@ -1,56 +1,23 @@
-# Desafio Front-end Agrotis
-> Desafio para ingressar como Front-end Developer na Agrotis em Curitiba-PR
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-![Agrotis Developers Logo](images/agrotis-developers.png?raw=true "Agrotis Developers Logo")
+## Available Scripts
 
-## Sobre a Agrotis e o Agrotis Developers
-A Agrotis é uma empresa que desde 1991 contribui com o desenvolvimento de sistemas focados para o agronegócio. Agrotis Developers é uma comunidade criada pelos times de desenvolvimento que são apaixonados por tecnologia, práticas ágeis, cerveja e muito, mas muito café. Juntos aprendemos e compartilhamos nossas experiências com o mundo (estamos no [medium](https://medium.com/agrotis-developers) também). [Aprenda mais sobre a agrotis no nosso site](https://www.agrotis.com/).
+In the project directory, you can run:
 
-## Sobre o desafio
-Você não terá data de entrega limite para essa prova, mas fique atento pois vamos avaliar mais rigorosamente seu código quanto mais demorar para entregar a partir da data em que foi feito o fork desse repositório. A ideia é simples, você terá que desenvolver 2 telas (com dados falsos mesmo) seguindo alguns pré requisitos e o seguinte layout:
+### `yarn start`
 
-![Desafio](images/desafio.png?raw=true "Desafio")
+Runs the app in the development mode.<br />
+Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-## Pré requisitos
-* [ ] React ou Angular
-* [ ] Ícones em svg
-* [ ] Use cores do Material Design
-* [ ] Documentar como rodamos servidor do projeto no README.MD
+The page will reload if you make edits.<br />
+You will also see any lint errors in the console.
 
-## Dicas
-- Styled Components
-- Seguir Material Design Guidelines
-- React Router
+### `yarn build`
 
-## Diferenciais
-- Criar issues e resolvê-las a partir de pull requests
-- Documentação no código
-- Arquivos pequenos com poucas responsabilidades
-- Redux
-- Criação de servidor para os mocks da tela
-- Usabilidade e feedback para o usuário no carregamento da consulta
-- Seguir algum Javascript Style Guide
-- Layout responsivo (seja criativo!)
+Builds the app for production to the `build` folder.<br />
+It correctly bundles React in production mode and optimizes the build for the best performance.
 
-## Pronto para começar o desafio?
-- Faça um "fork" desse repositório na sua conta do Github
-- Crie uma branch com o seu nome e sobrenome ex: ```patrick-santos```
-- Após completar o desafio, crie um "pull request" nesse repositório comparando a sua branch com a master
-- Receberemos uma notificação do seu pull request, faremos a correção da sua solução e entraremos em contato com o email da conta do github em que foi executada o desafio
+The build is minified and the filenames include the hashes.<br />
+Your app is ready to be deployed!
 
-## FAQ
-- Posso usar o create-react-app para completar o desafio?
-
-**Sim, você pode usar qualquer cli para criar seu projeto**
-
-- Preciso necessariamente fazer um fork do projeto?
-
-**Sim, para que possamos saber quanto tempo você levou para executar o desafio**
-
-- Aonde estão os assets?
-
-**Esse desafio não te dá nenhum asset, você terá que buscá-los por conta própria**
-
-- Tenho mais dúvidas, com quem posso entrar em contato?
-
-**Entre em contato com [Patrick Santos](https://github.com/santospatrick) (Front-end Developer) ou [Rodrigo Diego](https://www.linkedin.com/in/rodrigo-diego/) (UX Designer), Agrotis Developers elaboradores desse desafio.**
+Email para Contato: williamvitorino3@gmail.com

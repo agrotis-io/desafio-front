@@ -1,0 +1,14 @@
+.alert-success {
+  background-color: #009e0f;
+  border-radius: 0px;
+  position: absolute;
+  width: 30%;
+  color: white;
+  height: 3rem;
+  bottom: 1rem;
+  left: 40%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-align: center;
+}

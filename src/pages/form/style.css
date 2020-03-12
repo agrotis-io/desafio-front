@@ -1,0 +1,48 @@
+.custom-input {
+  border-radius: 0px;
+  border: none;
+  border-bottom: solid lightgray thin;
+}
+
+.custom-input:focus{
+  box-shadow: none;
+}
+
+.custom-input.is-error {
+  border-color: red;
+}
+
+.custom-input.is-error:active{
+  box-shadow: red;
+}
+
+.custom-input.is-ok {
+  border-color: green;
+}
+.custom-input.is-ok:active {
+  box-shadow: green;
+}
+
+.row {
+  margin-top: 1rem;
+}
+
+.custom-label {
+  color: gray;
+  margin-bottom: 0px;
+}
+
+.btn-save {
+  background-color: #2e8b56b2 !important;
+}
+
+.btn-custom {
+  text-transform: uppercase;
+  background-color: transparent;
+  border: none;
+  padding: 0.5rem 1.5rem;
+  border-radius: .25rem;
+  color: white;
+  font-weight: bold;
+  margin-right: 1rem;
+}
