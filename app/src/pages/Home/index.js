@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import { FiSearch, FiPlus } from 'react-icons/fi'
 
+import { useSelector } from 'react-redux'
+
 import {
   Board,
   BackgroundWhite,
@@ -19,26 +21,12 @@ import {
   Separator
 } from './styles'
 
+//let newValue = {}
+
 function Home () {
   const [search, setSearch] = useState('')
-  const [data, setData] = useState([
-    {
-      "name": "Andamento",
-      "description": "Quando o contrato está em andamento e pode ser alterado"
-    },
-    {
-      "name": "Finalizado",
-      "description": "Quando o contrato foi atendido e pode não ser modificado"
-    },
-    {
-      "name": "Andamento1",
-      "description": "Quando o contrato está em andamento e pode ser alterado"
-    },
-    {
-      "name": "Finalizado1",
-      "description": "Quando o contrato foi atendido e pode não ser modificado"
-    },
-  ])
+  const data = useSelector(state => state.data)
+  
   const [render, setRender] = useState([])
   const [helper, setHelper] = useState(2)
 
@@ -56,7 +44,7 @@ function Home () {
       }
     }
     setRender(datarender)
-  }, [helper, search])
+  }, [helper, search, data])
 
   function showAll() {
     document.getElementById('load-more').style.display = 'none';
