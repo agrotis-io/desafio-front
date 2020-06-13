@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import { FiSearch, FiPlus } from 'react-icons/fi'
-
+// Selector do redux para receber as situações
 import { useSelector } from 'react-redux'
-
+// Importação dos estilos do Styled Components
 import {
   Board,
   BackgroundWhite,
@@ -21,15 +21,16 @@ import {
   Separator
 } from './styles'
 
-//let newValue = {}
-
 function Home () {
+  // Variavel para pesquisa de situações por nome
   const [search, setSearch] = useState('')
+  // Colocando dados do redux em variavel
   const data = useSelector(state => state.data)
-  
+  // constante que renderiza os dados na tela tela
   const [render, setRender] = useState([])
+  // constante para selecionar quantos elementos setão renderizados
   const [helper, setHelper] = useState(2)
-
+  // Effect para pesquisa e mostrar mais
   useEffect(() => {
     let datarender = []
     if (search.length > 2) {
@@ -46,7 +47,7 @@ function Home () {
     }
     setRender(datarender)
   }, [helper, search, data])
-
+  //função para mostrar todas as situações
   function showAll() {
     document.getElementById('load-more').style.display = 'none';
     setHelper(data.length)

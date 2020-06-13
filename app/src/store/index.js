@@ -1,5 +1,6 @@
 import { createStore } from 'redux'
 
+// Estado inicial
 const INITIAL_STATE = {
   data: [
     {
@@ -13,6 +14,7 @@ const INITIAL_STATE = {
   ],
 }
 
+// Função para fazer alteração nas situações
 function situations(state = INITIAL_STATE, action) {
   switch (action.type) {
     case 'ADD_SITUATION':
@@ -21,7 +23,7 @@ function situations(state = INITIAL_STATE, action) {
       return state
   }
 }
-
+// Store do redux
 const store = createStore(situations)
 
 export default store

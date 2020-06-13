@@ -1,5 +1,5 @@
 import React from 'react'
-
+// Apenas mensagem para página desconhecida
 function PageNotFound () {
   return (
     <div>
