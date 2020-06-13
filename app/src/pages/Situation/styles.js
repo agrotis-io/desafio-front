@@ -7,7 +7,7 @@ const Board = styled.div`
 `
 const BackgroundWhite = styled.div`
   background-color: #FFF;
-  min-height: calc(100vh - 244px);
+  min-height: calc(100vh - 254px);
   margin-bottom: 20px;
 `
 
@@ -106,6 +106,9 @@ const NameInput = styled.div`
     width: 90%;
     font-size: 1.2em;
     padding: 5px;
+  }
+  @media only screen and (max-width: 600px) {
+    margin-bottom: 16px;
   }
 `
 

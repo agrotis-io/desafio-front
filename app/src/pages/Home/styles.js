@@ -7,7 +7,7 @@ const Board = styled.div`
 `
 const BackgroundWhite = styled.div`
   background-color: #FFF;
-  min-height: calc(100vh - 244px);
+  min-height: calc(100vh - 254px);
   margin-bottom: 20px;
   position: relative;
 `

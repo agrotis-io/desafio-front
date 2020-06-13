@@ -2,7 +2,6 @@ import styled from 'styled-components'
 
 const HeaderDiv = styled.div`
   background-color: #FFF;
-  width: 100vw;
   height: 68px;
   border-bottom: 2px solid #000;
 `
