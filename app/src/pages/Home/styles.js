@@ -9,6 +9,7 @@ const BackgroundWhite = styled.div`
   background-color: #FFF;
   min-height: calc(100vh - 244px);
   margin-bottom: 20px;
+  position: relative;
 `
 
 const BoardHeader = styled.div`
@@ -84,12 +85,12 @@ const ItemDescription = styled.p`
 const LoadMore = styled.div`
   display: block;
   text-align: center;
-  a {
+  span {
     cursor: pointer;
     color: #145E43;
     text-decoration: underline;
   }
-  p{
+  p {
     color: #cccccc;
   }
 `
@@ -99,15 +100,46 @@ const AddButton = styled.button`
   height: 50px;
   border-radius: 100%;
   background-color: #B45F06;
-  position: relative;
   bottom: 45px;
-  left: 1000px;
   cursor: pointer;
+
+  position: absolute;
+  z-index: 1;
+  top: 95%;
+  left: 96%;
+  margin-left: -60px;
+
   svg {
     width: 50px;
     height: 50px;
     color: #FFF;
   }
+
+  span {
+    visibility: hidden;
+    width: 120px;
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+    opacity: 0.5;
+    
+    /* Position the tooltip */
+    position: absolute;
+    z-index: 1;
+    bottom: 100%;
+    left: 50%;
+    margin-left: -60px;
+  }
+
+  &:hover span {
+    visibility: visible;
+  }
+`
+const Separator = styled.div`
+  width: 50px;
+  height: 50px;
 `
 
 export {
@@ -123,5 +155,6 @@ export {
   ItemName,
   ItemDescription,
   LoadMore,
-  AddButton
+  AddButton,
+  Separator
 }

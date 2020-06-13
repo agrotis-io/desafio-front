@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { Link } from 'react-router-dom'
 import { FiChevronLeft } from 'react-icons/fi'
 
@@ -9,12 +9,13 @@ import {
   BoardTitle,
   Actions,
   SaveButton,
-  Separator
+  Separator,
+  Inputs,
+  NameInput,
+  DescriptionInput
 } from './styles'
 
 function Situation () {
-  const [Search, setSearch] = useState('')
-
   return (
     <Board>
       <BackgroundWhite>
@@ -22,6 +23,7 @@ function Situation () {
           <BoardTitle>
             <Link to="/">
               <FiChevronLeft />
+              <span>Voltar</span>
             </Link>
             Situação
           </BoardTitle>
@@ -30,16 +32,16 @@ function Situation () {
             <SaveButton>Salvar</SaveButton>
           </Actions>
         </BoardHeader>
-        <div>
-          <div>
+        <Inputs>
+          <NameInput>
             <label htmlFor="name">Nome*</label>
-            <input type="text" name="name" />
-          </div>
-          <div>
+            <input type="text" name="name" id="name" />
+          </NameInput>
+          <DescriptionInput>
             <label htmlFor="description">Descrição*</label>
-            <input type="text" name="description" />
-          </div>
-        </div>
+            <input type="text" name="description" id="description" />
+          </DescriptionInput>
+        </Inputs>
       </BackgroundWhite>
       <Separator />
     </Board>
