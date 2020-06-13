@@ -52,6 +52,9 @@ const BoardTitle = styled.h2`
   &:hover span {
     visibility: visible;
   }
+  @media only screen and (max-width: 600px) {
+    font-size: 0.8em;
+  }
 `
 
 const Actions = styled.div`
@@ -84,6 +87,10 @@ const SaveButton = styled.div`
 const Inputs = styled.div`
   display: flex;
   margin: 20px 10px 20px 5px;
+  @media only screen and (max-width: 600px) {
+    flex-wrap: wrap;
+    margin-bottom: 10px;
+  }
 `
 
 const NameInput = styled.div`

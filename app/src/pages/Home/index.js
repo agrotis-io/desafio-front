@@ -38,6 +38,7 @@ function Home () {
     } else {
       for (let index = 0; index < helper; index++) {
         datarender.push(data[index])
+        document.getElementById('load-more').style.display = 'none';
         if (helper !== data.length) {
           document.getElementById('load-more').style.display = 'block';
         }
@@ -74,13 +75,10 @@ function Home () {
             </ListItem>
           ))}
         </List>
-        {data.length > 2 &&
-          <LoadMore id="load-more">
-           <span onClick={showAll}>Carregar Mais...</span>
-           <p>(2-{data.length})</p>
-         </LoadMore>
-        }
-       
+        <LoadMore id="load-more">
+          <span onClick={showAll}>Carregar Mais...</span>
+          <p>(2-{data.length})</p>
+        </LoadMore>
         <Link to="/situation">
           <AddButton>
             <FiPlus />

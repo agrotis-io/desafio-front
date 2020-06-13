@@ -19,11 +19,18 @@ const BoardHeader = styled.div`
   height: 48px;
   align-items: center;
   justify-content: space-between;
+  @media only screen and (max-width: 600px) {
+    font-size: 0.5em;
+    justify-content: space-between;
+  }
 `
 
 const BoardTitle = styled.h2`
   margin-left: 16px;
   font-weight: normal;
+  @media only screen and (max-width: 600px) {
+    margin-right: 8px;
+  }  
 `
 
 const SearchBox = styled.form`
@@ -33,6 +40,10 @@ const SearchBox = styled.form`
   height: 36px;
   align-items: center;
   margin-right: 8px;
+  @media only screen and (max-width: 600px) {
+    height: 36px;
+    width: 180px;
+  }
 `
 const SearchButton = styled.button`
   background-color: #FFF;
@@ -44,13 +55,20 @@ const SearchButton = styled.button`
     width: 25px;
     height: 25px;
   }
-  &:hover{
+  &:hover {
     filter: brightness(120%);
+  }
+  @media only screen and (max-width: 600px) {
+    margin-left: 4px;
+    margin-right: 4px;
   }
 `
 
 const SearchInput = styled.input`
   border: none;
+  @media only screen and (max-width: 600px) {
+    width: 80%;
+  }
 `
 
 const List = styled.ul`
@@ -66,6 +84,10 @@ const ListItem = styled.li`
   width: 90%;
   margin: 10px auto;
   border-radius: 5px;
+  @media only screen and (max-width: 600px) {
+    flex-wrap: wrap;
+    text-align: center;
+  }
 `
 const ItemName = styled.p`
   flex-grow: 2;
@@ -79,6 +101,10 @@ const ItemDescription = styled.p`
   text-align: center;
   span {
     font-weight: bold;
+  }
+  @media only screen and (max-width: 600px) {
+    margin-top: 8px;
+    flex-basis: 100%;
   }
 `
 
