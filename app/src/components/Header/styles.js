@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from 'styled-components'
 
 const HeaderDiv = styled.div`
   background-color: #FFF;
@@ -12,4 +12,4 @@ const LogoImg = styled.img`
   margin-left: -48px;
 `
 
-export { HeaderDiv, LogoImg };
+export { HeaderDiv, LogoImg }

@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from 'styled-components'
 
 const FooterDiv = styled.div`
   background-color: #FFF;
@@ -8,5 +8,4 @@ const FooterDiv = styled.div`
   text-align: center;
 `
 
-
-export { FooterDiv };
+export { FooterDiv }
