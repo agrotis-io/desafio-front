@@ -34,7 +34,7 @@ Flex.defaultProps = {
   alignItens: 'initial',
   background: 'initial',
   direction: 'row',
-  gap: 0,
+  gap: '0',
   justifyContent: 'initial',
   margin: 'initial',
   minHeight: 'initial',
@@ -43,14 +43,14 @@ Flex.defaultProps = {
 }
 
 Flex.propTypes = {
-  alignItens: PropTypes.string,
-  background: PropTypes.string,
-  children: PropTypes.element,
-  direction: PropTypes.string,
-  gap: PropTypes.string,
-  justifyContent: PropTypes.string,
-  margin: PropTypes.string,
-  minHeight: PropTypes.string,
-  padding: PropTypes.string,
-  width: PropTypes.string
+  alignItens: PropTypes.oneOfType([PropTypes.string, PropTypes.arrayOf(PropTypes.string)]),
+  background: PropTypes.oneOfType([PropTypes.string, PropTypes.func, PropTypes.arrayOf(PropTypes.string)]),
+  children: PropTypes.any,
+  direction: PropTypes.oneOfType([PropTypes.string, PropTypes.arrayOf(PropTypes.string)]),
+  gap: PropTypes.oneOfType([PropTypes.string, PropTypes.arrayOf(PropTypes.string)]),
+  justifyContent: PropTypes.oneOfType([PropTypes.string, PropTypes.arrayOf(PropTypes.string)]),
+  margin: PropTypes.oneOfType([PropTypes.string, PropTypes.arrayOf(PropTypes.string)]),
+  minHeight: PropTypes.oneOfType([PropTypes.string, PropTypes.arrayOf(PropTypes.string)]),
+  padding: PropTypes.oneOfType([PropTypes.string, PropTypes.arrayOf(PropTypes.string)]),
+  width: PropTypes.oneOfType([PropTypes.string, PropTypes.arrayOf(PropTypes.string)])
 }
