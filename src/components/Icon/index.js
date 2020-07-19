@@ -4,6 +4,8 @@ import PropTypes from 'prop-types'
 import Arrow from './Arrow'
 import Close from './Close'
 import Search from './Search'
+import Logo from './Logo'
+import Dark from './Dark'
 
 export default function Icon ({
   name, width, color, direction
@@ -15,6 +17,10 @@ export default function Icon ({
       return <Close width={width} color={color} />
     case 'search':
       return <Search width={width} color={color} />
+    case 'dark':
+      return <Dark width={width} color={color} />
+    case 'logo':
+      return <Logo width={width} color={color} />
     default:
       return <></>
   }
