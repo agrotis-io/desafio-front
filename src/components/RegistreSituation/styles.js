@@ -11,7 +11,7 @@ export const Input = styled.input`
   background: transparent;
   border: none;
   border-bottom: 1px solid ${({ theme }) => theme.colors.text.w300};
-  color: ${({ theme }) => theme.colors.text.w300};
+  color: ${({ theme }) => theme.colors.text.w000};
   outline: none;
   padding: 5px 15px;
 
@@ -26,7 +26,7 @@ export const Input = styled.input`
 `
 
 export const Label = styled.label`
-  color: ${({ theme }) => theme.colors.text.w300};
+  color: ${({ theme }) => theme.colors.text.w000};
   left: 10px;
   pointer-events: none;
   position: absolute;
@@ -34,7 +34,7 @@ export const Label = styled.label`
   transition: ease 200ms all;
 `
 export const Counter = styled.span`
-  color: ${({ theme }) => theme.colors.text.w300};
+  color: ${({ theme }) => theme.colors.text.w000};
   font-size: ${variables.fontSizes.sm};
   margin-left: auto;
   margin-top: 3px;

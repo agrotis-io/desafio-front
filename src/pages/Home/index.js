@@ -24,6 +24,7 @@ export default function Home () {
             alignItens='flex-start'
             background={({ theme }) => theme.colors.background.w300}
             direction='column'
+            margin='0 0 50px 0'
             minHeight='50vh'
             padding='30px'
           >
