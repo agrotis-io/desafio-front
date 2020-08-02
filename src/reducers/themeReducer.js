@@ -1,7 +1,7 @@
-import { CHANGE_THEME } from './actions'
+import { CHANGE_THEME } from 'actions'
 
-import light from '../../styles/themes/light'
-import dark from '../../styles/themes/dark'
+import light from 'styles/themes/light'
+import dark from 'styles/themes/dark'
 
 const initialState = {
   theme: light,

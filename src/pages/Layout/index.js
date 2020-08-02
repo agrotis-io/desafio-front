@@ -6,7 +6,7 @@ import Header from '../../components/Header'
 import { Outlet } from 'react-router-dom'
 
 export default function Layout () {
-  const { theme } = useSelector(state => state.themeReducer)
+  const { theme } = useSelector(state => state.theme)
 
   return (
     <ThemeProvider theme={theme}>

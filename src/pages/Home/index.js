@@ -1,12 +1,12 @@
 import React from 'react'
-import Flex from '../../components/Flex'
-import Search from '../../components/Search'
-import Title from '../../components/Title'
-import Situation from '../../components/Situation'
-import Icon from '../../components/Icon'
-import Absolute from '../../components/Absolute'
+import Flex from 'components/Flex'
+import Search from 'components/Search'
+import Title from 'components/Title'
+import Situation from 'components/Situation'
+import Icon from 'components/Icon'
+import Absolute from 'components/Absolute'
 import { Link } from 'react-router-dom'
-import variables from '../../styles/variables'
+import variables from 'styles/variables'
 
 export default function Home () {
   return (

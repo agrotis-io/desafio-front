@@ -2,11 +2,11 @@ import React from 'react'
 import Icon from '../Icon'
 import { Container } from './styles'
 import { useSelector, useDispatch } from 'react-redux'
-import { changeTheme } from '../../pages/Layout/actions'
+import { changeTheme } from '../../actions'
 import { Link } from 'react-router-dom'
 
 export default function Header () {
-  const { isDark } = useSelector(state => state.themeReducer)
+  const { isDark } = useSelector(state => state.theme)
 
   const dispatch = useDispatch()
 
