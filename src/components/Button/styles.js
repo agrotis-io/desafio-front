@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 import variables from '../../styles/variables'
 
-export const Container = styled.div`
+export const Container = styled.button`
   align-items: center;
   background: ${({ hasBackground }) => (hasBackground ? variables.colors.primary.w600 : 'transparent')};
   border-radius: 3px;

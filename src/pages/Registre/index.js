@@ -1,11 +1,11 @@
 import React from 'react'
-import Flex from '../../components/Flex'
-import Title from '../../components/Title'
-import Icon from '../../components/Icon'
-import Button from '../../components/Button'
-import RegistreSituation from '../../components/RegistreSituation'
+import Flex from 'components/Flex'
+import Title from 'components/Title'
+import Icon from 'components/Icon'
+import Button from 'components/Button'
+import Form from 'components/Form'
 import { Link } from 'react-router-dom'
-import variables from '../../styles/variables'
+import variables from 'styles/variables'
 
 export default function Home () {
   return (
@@ -24,7 +24,7 @@ export default function Home () {
               <Link to='/'>
                 <Button text='Voltar' hasBackground={false} />
               </Link>
-              <Button text='Salvar' />
+              <Button type='submit' text='Salvar' form='form' />
             </Flex>
           </Flex>
           <Flex
@@ -34,7 +34,7 @@ export default function Home () {
             minHeight='50vh'
             padding='30px'
           >
-            <RegistreSituation />
+            <Form />
           </Flex>
         </Flex>
       </Flex>

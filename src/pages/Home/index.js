@@ -1,5 +1,7 @@
 import React from 'react'
+import { useSelector } from 'react-redux'
 import Flex from 'components/Flex'
+import Toast from 'components/Toast'
 import Search from 'components/Search'
 import Title from 'components/Title'
 import Situation from 'components/Situation'
@@ -9,6 +11,8 @@ import { Link } from 'react-router-dom'
 import variables from 'styles/variables'
 
 export default function Home () {
+  const { situations, toast } = useSelector(state => state)
+
   return (
     <>
       <Flex
@@ -33,13 +37,19 @@ export default function Home () {
                 <Icon name='plus' color={variables.colors.secondary.w900} width='40' />
               </Link>
             </Absolute>
-            <Situation name='Andamento' description='Quando o crontrato está em andamento e não pode ser alterado' />
-            <Situation name='Andamento' description='Quando o crontrato está em andamento e não pode ser alterado' />
-            <Situation name='Andamento' description='Quando o crontrato está em andamento e não pode ser alterado' />
-            <Situation name='Andamento' description='Quando o crontrato está em andamento e não pode ser alterado' />
-            <Situation name='Andamento' description='Quando o crontrato está em andamento e não pode ser alterado' />
+            {
+              situations.map(situation => (
+                <Situation key={situation.id} name={situation.name} description={situation.description} />
+              ))
+            }
           </Flex>
         </Flex>
+        {
+          toast &&
+            <Absolute bottom='0' left='calc(50% - 125px)'>
+              <Toast text='Situação salva com sucesso' />
+            </Absolute>
+        }
       </Flex>
     </>
   )
