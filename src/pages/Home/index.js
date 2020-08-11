@@ -1,5 +1,7 @@
-import React from 'react'
-import { useSelector } from 'react-redux'
+import React, { useEffect } from 'react'
+import { useSelector, useDispatch } from 'react-redux'
+import { getSituations } from 'actions'
+
 import Flex from 'components/Flex'
 import Toast from 'components/Toast'
 import Search from 'components/Search'
@@ -7,11 +9,15 @@ import Title from 'components/Title'
 import Situation from 'components/Situation'
 import Icon from 'components/Icon'
 import Absolute from 'components/Absolute'
+
 import { Link } from 'react-router-dom'
 import variables from 'styles/variables'
 
 export default function Home () {
   const { situations, toast } = useSelector(state => state)
+  const dispatch = useDispatch()
+
+  useEffect(() => { dispatch(getSituations()) }, [])
 
   return (
     <>
@@ -38,7 +44,7 @@ export default function Home () {
               </Link>
             </Absolute>
             {
-              situations.map(situation => (
+              situations.data.map(situation => (
                 <Situation key={situation.id} name={situation.name} description={situation.description} />
               ))
             }
