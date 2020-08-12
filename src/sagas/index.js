@@ -1,10 +1,10 @@
 import { takeLatest, put, call } from 'redux-saga/effects'
 import {
   ASYNC_ADD_SITUATION,
-  ADD_SITUATION,
   ASYNC_GET_SITUATIONS,
   SUCCESS_GET_SITUATIONS,
-  FAILURE_GET_SITUATIONS
+  FAILURE_GET_SITUATIONS,
+  ASYNC_REMOVE_SITUATION
 } from 'actions/situationsActions'
 import firebase from '../api'
 
@@ -23,7 +23,7 @@ function * asyncGetSituations () {
       type: SUCCESS_GET_SITUATIONS,
       payload: {
         data: response,
-        loading: true,
+        loading: false,
         error: false
       }
     })
@@ -33,14 +33,24 @@ function * asyncGetSituations () {
 }
 
 function * asyncAddSituation (action) {
-  yield put({
-    type: ADD_SITUATION,
-    payload:
-      action.payload
+  const db = firebase.firestore()
+  yield db.collection('situation').add({
+    name: action.payload.name,
+    description: action.payload.description
   })
+
+  yield asyncGetSituations()
+}
+
+function * asyncRemoveSituation (action) {
+  const db = firebase.firestore()
+  yield db.collection('situation').doc(action.payload.id).delete()
+
+  yield asyncGetSituations()
 }
 
 export default function * rootSaga () {
   yield takeLatest(ASYNC_ADD_SITUATION, asyncAddSituation)
   yield takeLatest(ASYNC_GET_SITUATIONS, asyncGetSituations)
+  yield takeLatest(ASYNC_REMOVE_SITUATION, asyncRemoveSituation)
 }

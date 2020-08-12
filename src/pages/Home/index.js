@@ -45,7 +45,7 @@ export default function Home () {
             </Absolute>
             {
               situations.data.map(situation => (
-                <Situation key={situation.id} name={situation.name} description={situation.description} />
+                <Situation key={situation.id} name={situation.name} description={situation.description} situation={situation} />
               ))
             }
           </Flex>
