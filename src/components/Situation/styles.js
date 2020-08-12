@@ -17,7 +17,7 @@ export const Container = styled.div`
   }
 
   @media ${variables.deviceSize.tablet} {
-    grid-template-columns: 1fr 2fr;
+    grid-template-columns: 1fr 2fr 70px;
   }
 `
 export const Label = styled.p`

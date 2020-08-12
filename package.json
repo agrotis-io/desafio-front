@@ -39,7 +39,7 @@
   },
   "scripts": {
     "dev": "react-scripts start",
-    "build": "react-scripts build",
+    "build": "CI= react-scripts build",
     "test": "standard && react-scripts test",
     "lint": "standard --fix",
     "eject": "react-scripts eject",

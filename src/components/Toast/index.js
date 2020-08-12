@@ -15,9 +15,9 @@ export default function Toast ({ text }) {
   return (
     <Container>
       <Text>{text}</Text>
-      <a onClick={handleClick}>
+      <div onClick={handleClick}>
         <Icon name='close' width='20' />
-      </a>
+      </div>
     </Container>
   )
 }

@@ -3,6 +3,7 @@ import { Container, Label, Text, Section } from './styles'
 import PropTypes from 'prop-types'
 import { useDispatch } from 'react-redux'
 import { removeSituation } from 'actions'
+import Icon from 'components/Icon'
 
 export default function Situation ({ name, description, situation }) {
   const dispatch = useDispatch()
@@ -17,7 +18,11 @@ export default function Situation ({ name, description, situation }) {
         <Label>Descrição:</Label>
         <Text>{description}</Text>
       </Section>
-      <button onClick={() => dispatch(removeSituation(situation))}>delete</button>
+      <Section>
+        <div onClick={() => dispatch(removeSituation(situation))}>
+          <Icon name='close' color={({ theme }) => theme.colors.text.w300} />
+        </div>
+      </Section>
     </Container>
   )
 }
