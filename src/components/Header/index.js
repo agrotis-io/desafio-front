@@ -2,7 +2,7 @@ import React from 'react'
 import Icon from '../Icon'
 import { Container } from './styles'
 import { useSelector, useDispatch } from 'react-redux'
-import { changeTheme } from '../../actions'
+import { changeTheme } from '../../store/actions'
 import { Link } from 'react-router-dom'
 
 export default function Header () {

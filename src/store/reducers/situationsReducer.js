@@ -1,8 +1,8 @@
-import { REMOVE_SITUATION, SUCCESS_GET_SITUATIONS, FAILURE_GET_SITUATIONS } from 'actions/situationsActions'
+import { REMOVE_SITUATION, SUCCESS_GET_SITUATIONS, FAILURE_GET_SITUATIONS } from 'store/actions/situationsActions'
 
 const INITIAL_STATE = {
   data: [],
-  loading: false,
+  loading: true,
   error: false
 }
 

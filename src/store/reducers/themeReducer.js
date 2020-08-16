@@ -1,4 +1,4 @@
-import { CHANGE_THEME } from 'actions'
+import { CHANGE_THEME } from 'store/actions'
 
 import light from 'styles/themes/light'
 import dark from 'styles/themes/dark'

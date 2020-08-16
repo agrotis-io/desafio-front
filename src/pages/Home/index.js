@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
-import { getSituations } from 'actions'
+import { getSituations } from 'store/actions'
 
 import Flex from 'components/Flex'
 import Toast from 'components/Toast'

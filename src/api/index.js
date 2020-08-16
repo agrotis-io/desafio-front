@@ -12,4 +12,11 @@ const firebaseConfig = {
 
 firebase.initializeApp(firebaseConfig)
 
-export default firebase
+export async function fetchData () {
+  const db = firebase.firestore()
+  const data = await db.collection('situation').get()
+  const response = data.docs.map(doc => ({ ...doc.data(), id: doc.id }))
+  return response
+}
+
+export const db = firebase.firestore()

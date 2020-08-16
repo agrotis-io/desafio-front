@@ -1,7 +1,7 @@
 import React from 'react'
 import { useId } from 'react-id-generator'
 import { useForm, FormProvider } from 'react-hook-form'
-import { addSituation, changeToastStatus } from 'actions'
+import { addSituation, changeToastStatus } from 'store/actions'
 import { useDispatch } from 'react-redux'
 import InputValue from 'components/InputValue'
 import { Container } from './styles'

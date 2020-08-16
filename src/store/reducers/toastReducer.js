@@ -1,4 +1,4 @@
-import { CHANGE_TOAST_STATUS } from 'actions/toastActions'
+import { CHANGE_TOAST_STATUS } from 'store/actions/toastActions'
 
 export function toastReducer (state = false, action) {
   switch (action.type) {

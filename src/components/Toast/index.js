@@ -3,7 +3,7 @@ import Icon from '../Icon'
 import PropTypes from 'prop-types'
 import { Container, Text } from './styles'
 import { useDispatch } from 'react-redux'
-import { changeToastStatus } from 'actions'
+import { changeToastStatus } from 'store/actions'
 
 export default function Toast ({ text }) {
   const dispatch = useDispatch()

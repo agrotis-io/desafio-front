@@ -5,15 +5,8 @@ import {
   SUCCESS_GET_SITUATIONS,
   FAILURE_GET_SITUATIONS,
   ASYNC_REMOVE_SITUATION
-} from 'actions/situationsActions'
-import firebase from '../api'
-
-async function fetchData () {
-  const db = firebase.firestore()
-  const data = await db.collection('situation').get()
-  const response = data.docs.map(doc => ({ ...doc.data(), id: doc.id }))
-  return response
-}
+} from 'store/actions/situationsActions'
+import { fetchData, db } from '../../api'
 
 function * asyncGetSituations () {
   const response = yield call(fetchData)
@@ -33,7 +26,6 @@ function * asyncGetSituations () {
 }
 
 function * asyncAddSituation (action) {
-  const db = firebase.firestore()
   yield db.collection('situation').add({
     name: action.payload.name,
     description: action.payload.description
@@ -43,7 +35,6 @@ function * asyncAddSituation (action) {
 }
 
 function * asyncRemoveSituation (action) {
-  const db = firebase.firestore()
   yield db.collection('situation').doc(action.payload.id).delete()
 
   yield asyncGetSituations()

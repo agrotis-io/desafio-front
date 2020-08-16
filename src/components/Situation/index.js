@@ -2,7 +2,7 @@ import React from 'react'
 import { Container, Label, Text, Section } from './styles'
 import PropTypes from 'prop-types'
 import { useDispatch } from 'react-redux'
-import { removeSituation } from 'actions'
+import { removeSituation } from 'store/actions'
 import Icon from 'components/Icon'
 
 export default function Situation ({ name, description, situation }) {
