@@ -44,6 +44,10 @@ export default function Home () {
               </Link>
             </Absolute>
             {
+              situations.loading &&
+                <Icon name='loading' width='55' />
+            }
+            {
               situations.data.map(situation => (
                 <Situation key={situation.id} name={situation.name} description={situation.description} situation={situation} />
               ))

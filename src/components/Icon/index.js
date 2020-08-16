@@ -7,6 +7,7 @@ import Search from './Search'
 import Logo from './Logo'
 import Dark from './Dark'
 import Plus from './Plus'
+import Loading from './Loading'
 
 export default function Icon ({
   name, width, color, direction
@@ -24,6 +25,8 @@ export default function Icon ({
       return <Logo width={width} color={color} />
     case 'plus':
       return <Plus width={width} color={color} />
+    case 'loading':
+      return <Loading width={width} />
     default:
       return <></>
   }
