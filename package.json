@@ -12,7 +12,6 @@
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-hook-form": "^6.2.0",
-    "react-id-generator": "^3.0.1",
     "react-redux": "^7.2.0",
     "react-router": "^6.0.0-alpha.3",
     "react-router-dom": "^6.0.0-beta.0",

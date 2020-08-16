@@ -13,13 +13,11 @@ export default function InputValue ({
   name,
   placeholder
 }) {
-  const { register, errors } = useFormContext()
+  const { register } = useFormContext()
 
   return (
     <Container>
-      <Input name={name} type='text' ref={register({ required: true })} />
-      {errors.name && <p>Este campo não pode ficar vazio</p>}
-
+      <Input name={name} type='text' ref={register} required />
       <Label>{placeholder}</Label>
       <Counter>
         {length}

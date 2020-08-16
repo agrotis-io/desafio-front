@@ -3,6 +3,7 @@ import variables from '../../styles/variables'
 
 export const Container = styled.div`
   display: grid;
+  grid-template-rows: repeat(3, 1fr);
   padding: 12px 5px;
   position: relative;
 `
