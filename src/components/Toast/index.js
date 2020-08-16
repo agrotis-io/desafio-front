@@ -9,7 +9,7 @@ export default function Toast ({ text }) {
   const dispatch = useDispatch()
   const { toast } = useSelector(state => state)
 
-  // toast && setTimeout(() => closesToast(), 3000)
+  toast && setTimeout(() => closesToast(), 3000)
 
   function closesToast () {
     dispatch(changeToastStatus(false))

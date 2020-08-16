@@ -10,6 +10,7 @@ export const Container = styled.div`
   margin: ${({ margin }) => (Array.isArray(margin) ? margin[0] : margin)};
   min-height: ${({ minHeight }) => minHeight};
   padding: ${({ padding }) => padding};
+  position: relative;
   width: ${({ width }) => width};
 
   & > * {

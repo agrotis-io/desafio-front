@@ -56,9 +56,9 @@ export default function Home () {
         </Flex>
         {
           toast &&
-            <Absolute bottom='0' left='calc(50% - 125px)'>
+            <div style={{ position: 'fixed', bottom: '0', left: 'calc(50% - 125px)' }}>
               <Toast text='Situação salva com sucesso' />
-            </Absolute>
+            </div>
         }
       </Flex>
     </>
