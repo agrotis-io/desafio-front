@@ -1,9 +1,13 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
+import variables from 'styles/variables'
 
 const StyledSVG = styled.svg`
   cursor: pointer;
+  @media ${variables.deviceSize.tablet} {
+    display: none;
+  }
 `
 
 export default function Close ({ width, color }) {

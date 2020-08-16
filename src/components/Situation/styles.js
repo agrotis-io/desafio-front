@@ -10,14 +10,18 @@ export const Container = styled.div`
   display: grid;
   grid-template-columns: 1fr;
   margin-bottom: 10px;
+  position: relative;
   width: 100%;
 
   &:hover{
     background: ${({ theme }) => theme.colors.background.w400};
+    svg {
+    display: block;
+  }
   }
 
   @media ${variables.deviceSize.tablet} {
-    grid-template-columns: 1fr 2fr 70px;
+    grid-template-columns: 1fr 2fr;
   }
 `
 export const Label = styled.p`
