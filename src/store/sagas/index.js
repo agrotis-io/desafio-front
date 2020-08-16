@@ -6,6 +6,7 @@ import {
   FAILURE_GET_SITUATIONS,
   ASYNC_REMOVE_SITUATION
 } from 'store/actions/situationsActions'
+import { CHANGE_TOAST_STATUS } from 'store/actions/toastActions'
 import { fetchData, db } from '../../api'
 
 function * asyncGetSituations () {
@@ -32,6 +33,12 @@ function * asyncAddSituation (action) {
   })
 
   yield asyncGetSituations()
+  yield put({
+    type: CHANGE_TOAST_STATUS,
+    payload: {
+      data: true
+    }
+  })
 }
 
 function * asyncRemoveSituation (action) {
